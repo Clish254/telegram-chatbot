@@ -26,6 +26,12 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().indexOf(Hello) === 0) {
     bot.sendMessage(msg.from.id, "Hello  " + msg.from.first_name);
     }
+    const Start = "start";
+    if (msg.text.toString().toLowerCase().indexOf(Start) === 0) {
+        bot.sendMessage(msg.chat.id,`Hi ${msg.from.first_name} I can teach you a thing or two about javascript,type /keywords to see keywords that I understand`);
+       
+        bot.sendPhoto(msg.chat.id,"https://imgur.com/4TDaHNU",{caption : "Here is an example of a conversation you can have with me.If you send me something and I dont reply it means your text doesn't have a keyword that I understand."});   
+    }
     //send primitive data types
     const dataType = "data type";
     if (msg.text.toString().toLowerCase().includes(dataType)) {
@@ -86,11 +92,12 @@ bot.on('message', (msg) => {
     const loops = "loop";
     if (msg.text.toString().toLowerCase().includes(loops)) {
         bot.sendPhoto(msg.chat.id,"https://imgur.com/WYa1LjS",{caption : "Here you go ! \nIn order to iterate over data in JavaScript or do something repeatedly, we use loops.This is how you would write a for loop to loop through an array.\nLearn more about loops here https://www.theavocoder.com/complete-javascript/2018/12/20/loops"});
-        }  
+        } 
+     
     });
 bot.onText(/\/start/, (msg) => {
 
-    bot.sendMessage(msg.chat.id,`Hi ${msg.from.first_name} I can teach you a thing or two about javascript type /keywords to see keywords that I understand`);
+    bot.sendMessage(msg.chat.id,`Hi ${msg.from.first_name} I can teach you a thing or two about javascript,type /keywords to see keywords that I understand`);
        
     bot.sendPhoto(msg.chat.id,"https://imgur.com/4TDaHNU",{caption : "Here is an example of a conversation you can have with me.If you send me something and I dont reply it means your text doesn't have a keyword that I understand."});
     });
