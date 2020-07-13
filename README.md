@@ -1,3 +1,3 @@
 # telegram-chatbot
-This is a simple telegram chatbot that teaches you javascript\n
+This is a simple telegram chatbot that teaches you javascript<br>
 *Access the bot here t.me/Javascript_syntax_bot
